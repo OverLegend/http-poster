@@ -88,7 +88,7 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
-        if (config.isEnabled("config.events.player.die.enable")) {
+        if (config.isEnabled("config.events.player.killed.enable")) {
             if (event.getEntity().getKiller() instanceof Player) {
 
                 String serverName = config.getServerName();
@@ -106,7 +106,7 @@ public class PlayerListener implements Listener {
                 String victimKillCount = String.valueOf(v.getStatistic(Statistic.PLAYER_KILLS));
                 String victimDeathCount = String.valueOf(v.getStatistic(Statistic.DEATHS));
 
-                String url = config.getOptionUrl("config.events.player.die.endpoint");
+                String url = config.getOptionUrl("config.events.player.killed.endpoint");
 
                 String[] keys = {"serverName", "victimName", "victimUuid", "victimKills", "victimDeaths", "killerName", "killerUuid", "killerKills", "killerDeaths"};
                 String[] values = {serverName, victimName, victimUuid, victimKillCount, victimDeathCount, killerName, killerUuid, killerKillCount, killerDeathCount};
