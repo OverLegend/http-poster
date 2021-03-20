@@ -1,0 +1,6 @@
+com\nicolorancan\Main\Listeners\ServerListener.class
+com\nicolorancan\Main\Listeners\PlayerListener.class
+com\nicolorancan\Main\Commands\HttpPost.class
+com\nicolorancan\Main\Utils\ConfigManager.class
+com\nicolorancan\Main\Main.class
+com\nicolorancan\Main\Utils\PostRequester.class

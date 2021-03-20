@@ -1,0 +1,9 @@
+main: com.nicolorancan.Main.Main
+name: HttpPoster
+version: 1.0
+
+commands:
+  httppost:
+    description: Get plugin informations
+    usage: /httppost
+    permission: httppost.info
