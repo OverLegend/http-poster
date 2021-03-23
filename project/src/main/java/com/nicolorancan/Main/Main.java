@@ -1,6 +1,6 @@
 package com.nicolorancan.Main;
 
-import com.nicolorancan.Main.Commands.HttpPost;
+import com.nicolorancan.Main.Commands.CommandManager;
 import com.nicolorancan.Main.Listeners.PlayerListener;
 import com.nicolorancan.Main.Listeners.ServerListener;
 import com.nicolorancan.Main.Utils.ConfigManager;
@@ -20,8 +20,9 @@ public class Main extends JavaPlugin {
         this.serverListener = new ServerListener(this.getPoster(), this.getConfigFile());
         serverListener.triggerStart();
 
-        this.getCommand("httppost").setExecutor(new HttpPost());
         getServer().getPluginManager().registerEvents(new PlayerListener(this.getPoster(), this.getConfigFile()), this);
+
+        getCommand("httpposter").setExecutor(new CommandManager());
 
     }
 

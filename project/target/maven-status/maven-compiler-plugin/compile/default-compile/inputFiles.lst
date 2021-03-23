@@ -1,6 +1,8 @@
-C:\Users\Nicolò Rancan\Documents\Projects\Java\HttpPoster\project\src\main\java\com\nicolorancan\Main\Listeners\ServerListener.java
-C:\Users\Nicolò Rancan\Documents\Projects\Java\HttpPoster\project\src\main\java\com\nicolorancan\Main\Utils\PostRequester.java
-C:\Users\Nicolò Rancan\Documents\Projects\Java\HttpPoster\project\src\main\java\com\nicolorancan\Main\Listeners\PlayerListener.java
-C:\Users\Nicolò Rancan\Documents\Projects\Java\HttpPoster\project\src\main\java\com\nicolorancan\Main\Main.java
-C:\Users\Nicolò Rancan\Documents\Projects\Java\HttpPoster\project\src\main\java\com\nicolorancan\Main\Utils\ConfigManager.java
-C:\Users\Nicolò Rancan\Documents\Projects\Java\HttpPoster\project\src\main\java\com\nicolorancan\Main\Commands\HttpPost.java
+C:\Users\Nicolò Rancan\Documents\Projects\Java\http-poster\project\src\main\java\com\nicolorancan\Main\Utils\ConfigManager.java
+C:\Users\Nicolò Rancan\Documents\Projects\Java\http-poster\project\src\main\java\com\nicolorancan\Main\Commands\SubCommand.java
+C:\Users\Nicolò Rancan\Documents\Projects\Java\http-poster\project\src\main\java\com\nicolorancan\Main\Commands\SubCommands\Help.java
+C:\Users\Nicolò Rancan\Documents\Projects\Java\http-poster\project\src\main\java\com\nicolorancan\Main\Listeners\PlayerListener.java
+C:\Users\Nicolò Rancan\Documents\Projects\Java\http-poster\project\src\main\java\com\nicolorancan\Main\Utils\PostRequester.java
+C:\Users\Nicolò Rancan\Documents\Projects\Java\http-poster\project\src\main\java\com\nicolorancan\Main\Commands\CommandManager.java
+C:\Users\Nicolò Rancan\Documents\Projects\Java\http-poster\project\src\main\java\com\nicolorancan\Main\Listeners\ServerListener.java
+C:\Users\Nicolò Rancan\Documents\Projects\Java\http-poster\project\src\main\java\com\nicolorancan\Main\Main.java

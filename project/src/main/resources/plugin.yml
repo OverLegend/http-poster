@@ -3,7 +3,7 @@ name: HttpPoster
 version: 1.0
 
 commands:
-  httppost:
-    description: Get plugin informations
-    usage: /httppost
-    permission: httppost.info
+  httpposter:
+    usage: /httpposter <command>
+    permission: httpposter.help
+    permission-message: You do not have permission to run this command
