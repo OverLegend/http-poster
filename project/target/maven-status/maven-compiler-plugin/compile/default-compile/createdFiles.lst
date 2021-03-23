@@ -1,6 +1,6 @@
 com\nicolorancan\Main\Listeners\ServerListener.class
-com\nicolorancan\Main\Commands\SubCommands\Help.class
 com\nicolorancan\Main\Listeners\PlayerListener.class
+com\nicolorancan\Main\Commands\SubCommands\EventsList.class
 com\nicolorancan\Main\Utils\ConfigManager.class
 com\nicolorancan\Main\Main.class
 com\nicolorancan\Main\Commands\SubCommand.class

@@ -1,6 +1,6 @@
 main: com.nicolorancan.Main.Main
 name: HttpPoster
-version: 1.0
+version: 2.0
 
 commands:
   httpposter:
