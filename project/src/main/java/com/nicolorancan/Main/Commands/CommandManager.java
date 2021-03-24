@@ -21,7 +21,7 @@ public class CommandManager implements CommandExecutor
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
     {
-        if (args.length == 1 && args[0].equals("help"))
+        if (args.length == 1 && args[0].equalsIgnoreCase("help"))
         {
             sender.sendMessage(ChatColor.DARK_AQUA + "" + ChatColor.BOLD + "HttpPoster command list:");
 
