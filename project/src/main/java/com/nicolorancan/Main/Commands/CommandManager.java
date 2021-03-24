@@ -9,32 +9,40 @@ import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 
-public class CommandManager implements CommandExecutor {
+public class CommandManager implements CommandExecutor
+{
+    private final ArrayList<SubCommand> subCommands = new ArrayList<>();
 
-    private ArrayList<SubCommand> subCommands = new ArrayList<>();
-
-    public CommandManager() {
+    public CommandManager()
+    {
         subCommands.add(new EventsList());
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
-        if (args.length == 2 && args[1] == "help") {
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
+    {
+        if (args.length == 1 && args[0].equals("help"))
+        {
             sender.sendMessage(ChatColor.DARK_AQUA + "" + ChatColor.BOLD + "HttpPoster command list:");
-            for (int i = 0; i < subCommands.size(); i++) {
-                sender.sendMessage(ChatColor.AQUA + subCommands.get(i).getSyntax() + ChatColor.RESET + " - " + subCommands.get(i).getDescription());
-            }
-        } else {
-            if (args.length > 1) {
-                for (int i = 0; i < subCommands.size(); i++) {
-                    if (args[1].equalsIgnoreCase(subCommands.get(i).getName())) {
-                        subCommands.get(i).perform((Player) sender, args);
+
+            for (SubCommand subCommand : subCommands)
+                sender.sendMessage(ChatColor.AQUA + subCommand.getSyntax() + ChatColor.RESET + " - " + subCommand.getDescription());
+        }
+        else
+        {
+            if (args.length >= 1)
+            {
+                for (SubCommand subCommand : subCommands)
+                {
+                    if (args[0].equalsIgnoreCase(subCommand.getName()))
+                    {
+                        subCommand.perform((Player) sender, args);
+                        return true;
                     }
                 }
-            } else {
-                sender.sendMessage("Use " + ChatColor.AQUA + "/httpposter help " + ChatColor.RESET + "for a list of all available commands.");
             }
+
+            sender.sendMessage("Use " + ChatColor.AQUA + "/httpposter help " + ChatColor.RESET + "for a list of all available commands.");
         }
         return true;
     }
