@@ -1,0 +1,10 @@
+main: com.nicolorancan.Main.Main
+name: HttpPoster
+version: 2.0
+api-version: 1.16
+
+commands:
+  httpposter:
+    usage: /httpposter <command>
+    permission: httpposter.help
+    permission-message: You do not have permission to run this command
