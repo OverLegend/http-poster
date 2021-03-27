@@ -1,7 +1,7 @@
 main: com.nicolorancan.Main.Main
 name: HttpPoster
-version: 2.0
-api-version: 1.16
+version: 3.1
+author: Rancan Nicolò
 
 commands:
   httpposter:
