@@ -13,8 +13,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 public class PlayerListener implements Listener {
-    private final PostRequester poster;
-    private final ConfigManager config;
+    private PostRequester poster;
+    private ConfigManager config;
 
     public PlayerListener(PostRequester postRequester, ConfigManager configManager) {
         this.poster = postRequester;

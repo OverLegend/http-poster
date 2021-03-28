@@ -4,7 +4,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 public class ConfigManager {
 
-    private final FileConfiguration configFile;
+    private FileConfiguration configFile;
 
     public ConfigManager(FileConfiguration file) {
         String pluginVersion = "1.0";
@@ -14,6 +14,7 @@ public class ConfigManager {
             file.set("version", pluginVersion);
 
             file.set("config.server-name", "server");
+            file.set("config.notify-version", true);
 
             file.set("config.events.player.join.enable", false);
             file.set("config.events.player.join.endpoint", "http://example.com");

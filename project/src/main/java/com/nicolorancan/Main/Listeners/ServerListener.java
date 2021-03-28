@@ -5,8 +5,8 @@ import com.nicolorancan.Main.Utils.PostRequester;
 
 public class ServerListener {
 
-    private final PostRequester poster;
-    private final ConfigManager config;
+    private PostRequester poster;
+    private ConfigManager config;
 
     public ServerListener(PostRequester postRequester, ConfigManager configManager) {
         this.poster = postRequester;

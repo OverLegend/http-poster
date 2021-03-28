@@ -1,4 +1,5 @@
 com\nicolorancan\Main\Listeners\ServerListener.class
+com\nicolorancan\Main\Utils\UpdateCheck.class
 com\nicolorancan\Main\Listeners\PlayerListener.class
 com\nicolorancan\Main\Commands\SubCommands\EventsList.class
 com\nicolorancan\Main\Utils\ConfigManager.class
