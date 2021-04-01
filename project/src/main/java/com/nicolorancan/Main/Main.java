@@ -5,7 +5,6 @@ import com.nicolorancan.Main.Listeners.PlayerListener;
 import com.nicolorancan.Main.Listeners.ServerListener;
 import com.nicolorancan.Main.Utils.ConfigManager;
 import com.nicolorancan.Main.Utils.PostRequester;
-import com.nicolorancan.Main.Utils.UpdateCheck;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -28,14 +27,14 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerListener(this.getPoster(), this.getConfigFile()), this);
 
         getCommand("httpposter").setExecutor(new CommandManager(this.config, this));
-
+/*
         Logger logger = this.getLogger();
 
         new UpdateCheck(this, this.config, 90451).getVersion(version -> {
             if (!this.getDescription().getVersion().equalsIgnoreCase(version)) {
                 logger.info("[HttpPoster] Update available: https://www.spigotmc.org/resources/httpposter.90451/");
             }
-        });
+        });*/
     }
 
     public void onDisable() {
@@ -50,12 +49,12 @@ public class Main extends JavaPlugin {
         this.serverListener = new ServerListener(this.getPoster(), this.config);
         getServer().getPluginManager().registerEvents(new PlayerListener(this.getPoster(), this.config), this);
         getCommand("httpposter").setExecutor(new CommandManager(this.config, this));
-
+/*
         Logger logger = this.getLogger();
         new UpdateCheck(this, this.config, 90451).getVersion(version -> {
             if (!this.getDescription().getVersion().equalsIgnoreCase(version)) {
                 logger.info("[HttpPoster] Update available: https://www.spigotmc.org/resources/httpposter.90451/");
             }
-        });
+        });*/
     }
 }
