@@ -1,40 +1,37 @@
-package com.nicolorancan.Main.Commands.SubCommands;
+package com.nicolorancan.main.commands.subcommands;
 
-import com.nicolorancan.Main.Commands.SubCommand;
-import com.nicolorancan.Main.Utils.ConfigManager;
+import com.nicolorancan.main.commands.SubCommand;
+import com.nicolorancan.main.utils.ConfigManager;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 
-public class EventsList extends SubCommand {
+public class EventsList implements SubCommand {
 
-    private ConfigManager config;
+    private final ConfigManager config;
 
     public EventsList(ConfigManager configManager) {
         this.config = configManager;
     }
 
-    @Override
     public String getName() {
         return "events";
     }
 
-    @Override
     public String getDescription() {
         return "Return the list of all the available events.";
     }
 
-    @Override
     public String getSyntax() {
         return "/httpposter events";
     }
 
-    @Override
     public void performForPlayer(Player player, String[] args) {
-        Map<String, String> eve = new HashMap<String, String>();
+        Map<String, String> eve = new HashMap<>();
         eve.put("Server start", "config.events.server.start.enable");
         eve.put("Server stop", "config.events.server.stop.enable");
         eve.put("Player join", "config.events.player.join.enable");
@@ -43,14 +40,16 @@ public class EventsList extends SubCommand {
         eve.put("Player advancement", "config.events.player.advancement-completed.enable");
 
         player.sendMessage(ChatColor.DARK_AQUA + "" + ChatColor.BOLD + "Available events:");
-        for (String i : eve.keySet()) {
-            player.sendMessage( ChatColor.RESET + "" + ChatColor.AQUA + "" + i + ChatColor.RESET + " - " + (config.isEnabled(eve.get(i)) ? "Enabled" : "Disabled"));
+        for (Entry<String, String> i : eve.entrySet()) {
+            String key = i.getKey();
+            String value = i.getValue();
+            player.sendMessage(ChatColor.RESET + "" + ChatColor.AQUA + "" + key +
+                    ChatColor.RESET + " - " + (config.isEnabled(value) ? "Enabled" : "Disabled"));
         }
     }
 
-    @Override
     public void performForConsole(CommandSender console, String[] args) {
-        Map<String, String> eve = new HashMap<String, String>();
+        Map<String, String> eve = new HashMap<>();
         eve.put("Server start", "config.events.server.start.enable");
         eve.put("Server stop", "config.events.server.stop.enable");
         eve.put("Player join", "config.events.player.join.enable");
@@ -59,8 +58,11 @@ public class EventsList extends SubCommand {
         eve.put("Player advancement", "config.events.player.advancement-completed.enable");
 
         console.sendMessage(ChatColor.DARK_AQUA + "" + ChatColor.BOLD + "Available events:");
-        for (String i : eve.keySet()) {
-            console.sendMessage( ChatColor.RESET + "" + ChatColor.AQUA + "" + i + ChatColor.RESET + " - " + (config.isEnabled(eve.get(i)) ? "Enabled" : "Disabled"));
+        for (Entry<String, String> i : eve.entrySet()) {
+            String key = i.getKey();
+            String value = i.getValue();
+            console.sendMessage(ChatColor.RESET + "" + ChatColor.AQUA + "" + key +
+                    ChatColor.RESET + " - " + (config.isEnabled(value) ? "Enabled" : "Disabled"));
         }
     }
 }

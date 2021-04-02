@@ -1,12 +1,19 @@
-package com.nicolorancan.Main.Utils;
+package com.nicolorancan.main.utils;
+
+
+import sun.net.www.http.HttpClient;
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+
+import static java.lang.String.format;
 
 public class PostRequester {
 
@@ -19,18 +26,20 @@ public class PostRequester {
         try {
 
 
-            Map<String, String> params = new LinkedHashMap<>();
+            Map<String, String> params = new HashMap<>();
             for (int i = 0; i < paramsName.length; i++) {
                 params.put(paramsName[i], paramsValue[i]);
             }
 
             StringBuilder postData = new StringBuilder();
 
-            for (Map.Entry<String, String> param : params.entrySet()) {
+            for (Entry<String, String> param : params.entrySet()) {
                 if (postData.length() != 0) postData.append('&');
-                postData.append(URLEncoder.encode(param.getKey(), "UTF-8"));
-                postData.append('=');
-                postData.append(URLEncoder.encode(String.valueOf(param.getValue()), "UTF-8"));
+                postData.append(format(
+                        "%s=%s",
+                        URLEncoder.encode(param.getKey(), "UTF-8"),
+                        URLEncoder.encode(String.valueOf(param.getValue()), "UTF-8"))
+                )
             }
 
             byte[] postDataBytes = postData.toString().getBytes(StandardCharsets.UTF_8);
@@ -53,7 +62,6 @@ public class PostRequester {
 
             for (int c; (c = in.read()) >= 0;)
                 System.out.print((char)c);
-
 
         } catch (Exception e) {
             e.printStackTrace();

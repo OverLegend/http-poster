@@ -1,16 +1,16 @@
-package com.nicolorancan.Main.Commands;
+package com.nicolorancan.main.commands;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public abstract class SubCommand {
-    public abstract String getName();
+public interface SubCommand {
+    String getName();
 
-    public abstract String getDescription();
+    String getDescription();
 
-    public abstract String getSyntax();
+    String getSyntax();
 
-    public abstract void performForPlayer(Player player, String args[]);
+    void performForPlayer(Player player, String[] args);
 
-    public abstract void performForConsole(CommandSender sender, String args[]);
+    void performForConsole(CommandSender sender, String[] args);
 }

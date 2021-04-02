@@ -1,10 +1,10 @@
-package com.nicolorancan.Main.Utils;
+package com.nicolorancan.main.utils;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
 public class ConfigManager {
 
-    private FileConfiguration configFile;
+    private final FileConfiguration configFile;
 
     public ConfigManager(FileConfiguration file) {
         String pluginVersion = "1.0";
@@ -39,10 +39,7 @@ public class ConfigManager {
     }
 
     private boolean exists() {
-        if (this.configFile.get("version") == null)
-            return false;
-        else
-            return true;
+        return this.configFile.get("version") != null;
     }
 
     public boolean isEnabled(String optionPath) { return this.configFile.getBoolean(optionPath); }

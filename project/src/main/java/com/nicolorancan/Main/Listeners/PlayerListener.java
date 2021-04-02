@@ -1,7 +1,7 @@
-package com.nicolorancan.Main.Listeners;
+package com.nicolorancan.main.listeners;
 
-import com.nicolorancan.Main.Utils.ConfigManager;
-import com.nicolorancan.Main.Utils.PostRequester;
+import com.nicolorancan.main.utils.ConfigManager;
+import com.nicolorancan.main.utils.PostRequester;
 import org.bukkit.Statistic;
 import org.bukkit.advancement.Advancement;
 import org.bukkit.entity.Player;
