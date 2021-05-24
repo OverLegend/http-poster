@@ -1,0 +1,13 @@
+main: com.nicolorancan.HttpPosterV2.Main
+name: HttpPosterV2
+version: 5.4
+author: Nicolò Rancan
+api-version: 1.16
+description: Send in-game events playload to a website api endpoint.
+website: www.nicolorancan.com
+
+depend: [PlaceholderAPI]
+
+commands:
+  http:
+    usage: /http
